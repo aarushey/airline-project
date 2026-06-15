@@ -281,8 +281,8 @@ try:
     df = load_and_process_data()
     
     # Title Frame Infrastructure Layout
-    st.markdown("<h1><b>TRANSFORM THE WAY<br>YOUR PORTFOLIO WORKS.</b></h1>", unsafe_allow_html=True)
-    st.markdown("<p class='editorial-narrative-p'><strong>Executive Despatch — Skyward Operational Analytics Division.</strong><br>Translating predictive continuous multi-year flight activity data velocities into high-impact corporate marketing workflows. This ledger evaluates cross-sectional aviation client lifecycles and churn vulnerability indexes captured from the 2017 through 2018 fiscal operational years to construct immediate targeted outreach frameworks.</p>", unsafe_allow_html=True)
+    st.markdown("<h1><b>PASSENGER RETENTION &<br>ACCOUNT PORTFOLIO DIAGONISTIC.</b></h1>", unsafe_allow_html=True)
+    st.markdown("<p class='editorial-narrative-p'><strong>Data Operations Brief — Skyward Core Analytics.</strong><br>This diagnostic workspace centralizes customer demographic metrics, year-over-year flight frequencies, and point redemption profiles across the 2017 and 2018 fiscal cycles to monitor overall portfolio health. By identifying soft-churn vulnerabilities and tracking declining booking trends, the application translates raw account data into clear, risk-adjusted workflows, providing immediate targeted retention strategies to protect high-value revenue streams.</p>", unsafe_allow_html=True)
     st.markdown("<hr style='border: none; border-top: 2px solid var(--border-color); opacity: 0.15; margin-bottom: 35px;'>", unsafe_allow_html=True)
 
     # ==========================================
@@ -310,45 +310,50 @@ try:
     # Dynamic Color Routing Metrics Engine
     if 'Grade A' in selected_churn:
         urgency_color = "#E53935"      
-        urgency_title = "CRITICAL CRISIS INTERVENTION (URGENCY STATUS: MAXIMA)"
+        urgency_title = "CRITICAL INTERVENTION (URGENCY STATUS: MAXIMA)"
         sidebar_focus = "**Operational Focus:** High-Yield Rescue Mode"
         sidebar_tasks = """
-        * [ ] Isolate multi-year trajectory graphs.
-        * [ ] Push accounts to Executive Outreach Desk.
-        * [ ] Trigger personalized double-points offer.
+        * [ ] **Priority Target:** Focus on the 25 High-Value soft-churn accounts.
+        * [ ] Deploy personalized **double-points offers** on their most-flown routes within 30 days.
+        * [ ] Establish a 60-day reactivation tracking window (Success Target: >= 25%).
+        * [ ] Escalate selected files directly to the Executive Outreach Desk.
+        
         """
     elif 'Grade C' in selected_churn or 'Grade B' in selected_churn:
         urgency_color = "#D97706"      
-        urgency_title = "ELEVATED RISK MITIGATION PROTOCOL (URGENCY STATUS: MEDIUM)"
-        sidebar_focus = "**Operational Focus:** Engagement & Lifecycle Upsell"
+        urgency_title = "ELEVATED RISK MITIGATION (URGENCY STATUS: MEDIUM)"
+        sidebar_focus = "**Operational Focus:** Value Protection & Relationship Upsell"
         sidebar_tasks = """
-        * [ ] Enroll profile in tiered milestones.
-        * [ ] Monitor continuous seasonal distribution shifts.
-        * [ ] Deploy soft engagement communication sequences.
+        * [ ] **Strict Protocol:** Do NOT discount (protect accounts with above-median CLV).
+        * [ ] Enroll targets into a tiered engagement program with quarterly milestone rewards.
+        * [ ] Monitor continuous seasonal distribution shifts to time promotional triggers.
         """
     elif 'Grade E' in selected_churn:
         urgency_color = "#2980B9"
-        urgency_title = "PROACTIVE ACTIVATION FRAMEWORK (URGENCY STATUS: INACTIVE)"
+        urgency_title = "PROACTIVE ACTIVATION (URGENCY STATUS: INACTIVE)"
         sidebar_focus = "**Operational Focus:** First-Flight Acquisition Rescue"
         sidebar_tasks = """
-        * [ ] Deploy 90-day onboarding campaign assets.
-        * [ ] Attach explicit first-flight bonus mile incentives.
+        * [ ] Target the **318 High-Value ghost members** whose acquisition costs are sunk.
+        * [ ] Launch automated **90-day onboarding campaigns** with a first-flight bonus incentive.
+        * [ ] Programmatically deprioritize profiles if zero engagement occurs within 90 days.
+        
         """
+    
     elif 'Grade D' in selected_churn:
         urgency_color = "#4B5563"      
-        urgency_title = "HISTORICAL METRIC SURVEY PIPELINE (URGENCY STATUS: TERMINATED)"
+        urgency_title = "HISTORICAL METRIC SURVEY (URGENCY STATUS: TERMINATED)"
         sidebar_focus = "**Operational Focus:** Automated Exit Profiling"
         sidebar_tasks = """
-        * [ ] Suppress promotional active channels entirely.
-        * [ ] Route profile identifiers to exit survey banks.
+        * [ ] **Total Blackout:** Suppress all active promotional marketing channels immediately.
+        * [ ] Route profile logs to exit survey banks to isolate structural loss metrics.
         """
     else:
         urgency_color = "#7B1FA2"
         urgency_title = "INSUFFICIENT TIMELINE BUFFER (URGENCY STATUS: PENDING)"
-        sidebar_focus = "**Operational Focus:** Baseline Retention Baseline tracking"
+        sidebar_focus = "**Operational Focus:** Baseline Trend Monitoring"
         sidebar_tasks = """
-        * [ ] Suppress slope delta validation errors.
-        * [ ] Audit monthly account activity records manually.
+        * [ ] Suppress slope delta validation anomalies.
+        * [ ] Audit monthly account activity logs manually. 
         """
 
     st.sidebar.markdown(f"""
@@ -403,32 +408,32 @@ try:
 
         if 'Grade A' in selected_churn:
             st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Accounts showing severe, sudden drops in flight activity over current monitoring intervals.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Disengage standard automated notifications. Manually escalate selected lines immediately to specialized retention specialists to process direct emergency compensation options.</p>
+                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Critical soft-churn account arrays. This cohort isolates 42 flatlined users, out of which 25 are ultra-premium High-Value (Class 1) accounts representing your highest-priority revenue risk.<br><br>
+                    <strong>Mandatory Playbook Action:</strong> Disengage all generic automated notifications immediately to prevent brand fatigue. Route these files to specialized retention desks to deploy a personalized double-points compensation offer on their most-flown route within 30 days. Track performance metrics against a strict 60-day reactivation window; operational workflows require an execution success threshold of ≥ 25% to validate campaign ROI.</p>
                 </div>
             """, unsafe_allow_html=True)
         elif 'Grade B' in selected_churn:
             st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Healthy accounts proving ongoing incremental transactional trajectory expansion profiles.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Deploy high-tier service tier invitations and brand advocacy campaigns to secure continuous lifecycle commitments.</p>
+                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> High-performance expansion portfolio. This cohort encompasses 7,430 active members (44.4% of your total user base) displaying healthy year-over-year transactional trajectory gains.<br><br>
+                    <strong>Mandatory Playbook Action:</strong> Focus efforts entirely on relationship extension and loyalty tier upselling. Enroll these accounts into your premium tiered status milestone frameworks with customized lifestyle rewards. STRICT COMPLIANCE DIRECTIVE: Do NOT introduce margin-slashing price discounts; these customers maintain an elite average CLV ($10,175.58) and must not be trained to expect devalued price drops.</p>
                 </div>
             """, unsafe_allow_html=True)
         elif 'Grade C' in selected_churn:
             st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Volatile or plateaued account arrays carrying unpredictable trendlines.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Distribute non-discount programmatic point thresholds to incentivize standard retention targets without devaluing product price floors.</p>
+                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Stable account arrays carrying unpredictable or plateaued travel frequencies across consecutive monitoring cycles.<br><br>
+                    <strong>Mandatory Playbook Action:</strong> Mitigate risk by systematically enrolling high-value neutral accounts into an active engagement program tied to quarterly milestone rewards. Similar to your growing segments, safeguard your financial baselines by withholding baseline price cuts—incentivize retention purely through experiential milestones and non-discounted point tier bumps.</p>
                 </div>
             """, unsafe_allow_html=True)
         elif 'Grade E' in selected_churn:
             st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Dormant profiles showing zero lifetime transaction interactions.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Initiate the automated 90-day first-flight onboarding loop framework to unlock stranded pipeline value.</p>
+                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Dormant registrations ("Ghost Members"). This cohort consists of 573 accounts who completed enrollment but logged zero lifetime flights, including 318 high-potential profiles where customer acquisition cost is already sunk.<br><br>
+                    <strong>Mandatory Playbook Action:</strong> Initialize an automated, targeted 90-day onboarding communication sequence built around an explicit, high-incentive first-flight bonus mile offer. Monitor these accounts closely for 90 days; if zero booking activity is recorded at the conclusion of this timeline, programmatically deprioritize the files to prevent wasteful outbound marketing expenditures.</p>
                 </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Inactive or closed customer registration cards.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Restrict outward campaign expenditure pools entirely. Retain profile identifiers only for internal historical metrics analysis.</p>
+                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> IConfirmed hard-churned portfolios. This segment contains 2,067 lost members representing a structural leakage of 12.3% of your total analyzed membership base.<br><br>
+                    <strong>Mandatory Playbook Action:</strong> Enforce an immediate, absolute communication blackout across all promotional, active channels to protect marketing budgets. Programmatically route these profile identifiers to your offline exit survey banks to isolate historical churn triggers and compile loss metrics without wasting further outreach capital. Retain profile identifiers only for internal historical metrics analysis.</p>
                 </div>
             """, unsafe_allow_html=True)
 
