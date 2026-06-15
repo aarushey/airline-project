@@ -285,7 +285,7 @@ try:
     st.markdown("<p class='editorial-narrative-p'><strong>Data Operations Brief — Skyward Core Analytics.</strong><br>This diagnostic workspace centralizes customer demographic metrics, year-over-year flight frequencies, and point redemption profiles across the 2017 and 2018 fiscal cycles to monitor overall portfolio health. By identifying soft-churn vulnerabilities and tracking declining booking trends, the application translates raw account data into clear, risk-adjusted workflows, providing immediate targeted retention strategies to protect high-value revenue streams.</p>", unsafe_allow_html=True)
     st.markdown("<hr style='border: none; border-top: 2px solid var(--border-color); opacity: 0.15; margin-bottom: 35px;'>", unsafe_allow_html=True)
 
-    # ==========================================
+   # ==========================================
     # 4. SIDEBAR MANAGEMENT SYSTEM
     # ==========================================
     st.sidebar.markdown("<h2 class='color-heading-controls'><b>STRATEGY CONTROLS</b></h2>", unsafe_allow_html=True)
@@ -307,54 +307,99 @@ try:
         ]
     )
 
+    # Detect the selected value class dynamically
+    is_high_value = "Class 1" in selected_value
+
     # Dynamic Color Routing Metrics Engine
     if 'Grade A' in selected_churn:
         urgency_color = "#E53935"      
-        urgency_title = "CRITICAL INTERVENTION (URGENCY STATUS: MAXIMA)"
-        sidebar_focus = "**Operational Focus:** High-Yield Rescue Mode"
-        sidebar_tasks = """
-        * [ ] **Priority Target:** Focus on the 25 High-Value soft-churn accounts.
-        * [ ] Deploy personalized **double-points offers** on their most-flown routes within 30 days.
-        * [ ] Establish a 60-day reactivation tracking window (Success Target: >= 25%).
-        * [ ] Escalate selected files directly to the Executive Outreach Desk.
-        
-        """
+        if is_high_value:
+            urgency_title = "CRITICAL INTERVENTION (URGENCY STATUS: MAXIMA)"
+            sidebar_focus = "**Operational Focus:** High-Yield Rescue Mode"
+            sidebar_tasks = """
+            * [ ] **Priority Target:** Focus on the 25 High-Value soft-churn accounts.
+            * [ ] Deploy personalized **double-points offers** on their most-flown routes within 30 days.
+            * [ ] Establish a 60-day reactivation tracking window (Success Target: >= 25%).
+            * [ ] Escalate selected files directly to the Executive Outreach Desk.
+            """
+        else:
+            urgency_title = "HIGH RISK WARNING (URGENCY STATUS: HIGH)"
+            sidebar_focus = "**Operational Focus:** Automated Margin-Safe Recovery"
+            sidebar_tasks = """
+            * [ ] **Risk Flag:** Monitor the 17 Low-Value soft-churn targets.
+            * [ ] Trigger low-cost, system-automated **loyalty multiplier loops**.
+            * [ ] Validate recovery and logging trends within a 45-day tracking cycle.
+            """
+            
     elif 'Grade C' in selected_churn or 'Grade B' in selected_churn:
-        urgency_color = "#D97706"      
-        urgency_title = "ELEVATED RISK MITIGATION (URGENCY STATUS: MEDIUM)"
-        sidebar_focus = "**Operational Focus:** Value Protection & Relationship Upsell"
-        sidebar_tasks = """
-        * [ ] **Strict Protocol:** Do NOT discount (protect accounts with above-median CLV).
-        * [ ] Enroll targets into a tiered engagement program with quarterly milestone rewards.
-        * [ ] Monitor continuous seasonal distribution shifts to time promotional triggers.
-        """
+        if is_high_value:
+            urgency_color = "#D97706"      
+            urgency_title = "ELEVATED RISK MITIGATION (URGENCY STATUS: MEDIUM)"
+            sidebar_focus = "**Operational Focus:** Value Protection & Relationship Upsell"
+            sidebar_tasks = """
+            * [ ] **Strict Protocol:** Do NOT discount (protect accounts with above-median CLV).
+            * [ ] Enroll targets into a tiered engagement program with quarterly milestone rewards.
+            * [ ] Monitor continuous seasonal distribution shifts to time promotional triggers.
+            """
+        else:
+            urgency_color = "#F59E0B"      
+            urgency_title = "PORTFOLIO NURTURE (URGENCY STATUS: STABLE)"
+            sidebar_focus = "**Operational Focus:** Volume Stimulation & Frequency Push"
+            sidebar_tasks = """
+            * [ ] Deploy entry-level **promotional flight vouchers** to leverage elasticity.
+            * [ ] Cross-sell integrated network partner deals to boost interaction velocity.
+            * [ ] Audit quarterly margin impact to ensure baseline stability thresholds.
+            """
+            
     elif 'Grade E' in selected_churn:
-        urgency_color = "#2980B9"
-        urgency_title = "PROACTIVE ACTIVATION (URGENCY STATUS: INACTIVE)"
-        sidebar_focus = "**Operational Focus:** First-Flight Acquisition Rescue"
-        sidebar_tasks = """
-        * [ ] Target the **318 High-Value ghost members** whose acquisition costs are sunk.
-        * [ ] Launch automated **90-day onboarding campaigns** with a first-flight bonus incentive.
-        * [ ] Programmatically deprioritize profiles if zero engagement occurs within 90 days.
-        
-        """
+        if is_high_value:
+            urgency_color = "#2980B9"
+            urgency_title = "PROACTIVE ACTIVATION (URGENCY STATUS: INACTIVE)"
+            sidebar_focus = "**Operational Focus:** First-Flight Acquisition Rescue"
+            sidebar_tasks = """
+            * [ ] Target the **318 High-Value ghost members** whose acquisition costs are sunk.
+            * [ ] Launch automated **90-day onboarding campaigns** with a first-flight bonus incentive.
+            * [ ] Programmatically deprioritize profiles if zero engagement occurs within 90 days.
+            """
+        else:
+            urgency_color = "#3498DB"
+            urgency_title = "DORMANT CLEANUP (URGENCY STATUS: COMPRESSED)"
+            sidebar_focus = "**Operational Focus:** Low-Cost Re-engagement & Purge"
+            sidebar_tasks = """
+            * [ ] Initialize a standard **3-step automated digital welcome track**.
+            * [ ] Append basic baseline introductory mileage rewards to test active response.
+            * [ ] Programmatically suppress or archive files if inactive after 60 days.
+            """
     
     elif 'Grade D' in selected_churn:
         urgency_color = "#4B5563"      
         urgency_title = "HISTORICAL METRIC SURVEY (URGENCY STATUS: TERMINATED)"
         sidebar_focus = "**Operational Focus:** Automated Exit Profiling"
-        sidebar_tasks = """
-        * [ ] **Total Blackout:** Suppress all active promotional marketing channels immediately.
-        * [ ] Route profile logs to exit survey banks to isolate structural loss metrics.
-        """
+        if is_high_value:
+            sidebar_tasks = """
+            * [ ] **Total Blackout:** Suppress all active promotional marketing channels immediately.
+            * [ ] Route profile logs to exit survey banks to isolate structural loss metrics.
+            """
+        else:
+            sidebar_tasks = """
+            * [ ] **Total Blackout:** Suppress all active promotional marketing channels immediately.
+            * [ ] Route profile logs to standard survey configurations to track loss trends.
+            """
+            
     else:
         urgency_color = "#7B1FA2"
         urgency_title = "INSUFFICIENT TIMELINE BUFFER (URGENCY STATUS: PENDING)"
         sidebar_focus = "**Operational Focus:** Baseline Trend Monitoring"
-        sidebar_tasks = """
-        * [ ] Suppress slope delta validation anomalies.
-        * [ ] Audit monthly account activity logs manually. 
-        """
+        if is_high_value:
+            sidebar_tasks = """
+            * [ ] Suppress slope delta validation anomalies.
+            * [ ] Audit monthly account activity logs manually. 
+            """
+        else:
+            sidebar_tasks = """
+            * [ ] Suppress slope delta validation anomalies.
+            * [ ] Route profiles to system-wide baseline automated health tracking logs.
+            """
 
     st.sidebar.markdown(f"""
         <div style='border-left: 5px solid {urgency_color}; padding-left: 15px; margin: 20px 0 10px 0;'>
@@ -393,7 +438,6 @@ try:
         "📊 PORTFOLIO MACRO ANALYTICS",
         "📖 CORE CRITERIA DOCUMENTATION"
     ])
-
     # ==========================================
     # TAB 1: WORKING EXECUTIVE CANVAS
     # ==========================================
