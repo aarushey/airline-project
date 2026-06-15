@@ -406,33 +406,69 @@ try:
                 <h4 style='color: {urgency_color} !important; font-family: \"Tenor Sans\", sans-serif !important; font-weight: bold !important; font-size: 1.6rem; margin-bottom: 12px;'><b>{urgency_title}</b></h4>
         """, unsafe_allow_html=True)
 
+        # Detect the selected value class dynamically
+        is_high_value = "Class 1" in selected_value
+
         if 'Grade A' in selected_churn:
-            st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Critical soft-churn account arrays. This cohort isolates 42 flatlined users, out of which 25 are ultra-premium High-Value (Class 1) accounts representing your highest-priority revenue risk.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Disengage all generic automated notifications immediately to prevent brand fatigue. Route these files to specialized retention desks to deploy a personalized double-points compensation offer on their most-flown route within 30 days. Track performance metrics against a strict 60-day reactivation window; operational workflows require an execution success threshold of ≥ 25% to validate campaign ROI.</p>
-                </div>
-            """, unsafe_allow_html=True)
+            if is_high_value:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Critical soft-churn account arrays. This cohort isolates 42 flatlined users, out of which 25 are ultra-premium High-Value (Class 1) accounts representing your highest-priority revenue risk.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> Disengage all generic automated notifications immediately to prevent brand fatigue. Route these files to specialized retention desks to deploy a personalized double-points compensation offer on their most-flown route within 30 days. Track performance metrics against a strict 60-day reactivation window; operational workflows require an execution success threshold of ≥ 25% to validate campaign ROI.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Standard soft-churn account arrays. This cohort isolates the remaining 17 lower-margin accounts showing sudden, severe flatlines in flight intervals.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> AUTOMATED ACCELERATOR LOOP: Trigger a low-cost, system-automated loyalty point multiplier reward package. Because baseline revenue margins are lower ($5,112.15 average CLV), restrict manual outreach pipelines and track recovery rates over a compressed 45-day window via automated transactional logging.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+                
         elif 'Grade B' in selected_churn:
-            st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> High-performance expansion portfolio. This cohort encompasses 7,430 active members (44.4% of your total user base) displaying healthy year-over-year transactional trajectory gains.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Focus efforts entirely on relationship extension and loyalty tier upselling. Enroll these accounts into your premium tiered status milestone frameworks with customized lifestyle rewards. STRICT COMPLIANCE DIRECTIVE: Do NOT introduce margin-slashing price discounts; these customers maintain an elite average CLV ($10,175.58) and must not be trained to expect devalued price drops.</p>
-                </div>
-            """, unsafe_allow_html=True)
+            if is_high_value:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> High-performance expansion portfolio. This cohort encompasses 7,430 active members (44.4% of your total user base) displaying healthy year-over-year transactional trajectory gains.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> Focus efforts entirely on relationship extension and loyalty tier upselling. Enroll these accounts into your premium tiered status milestone frameworks with customized lifestyle rewards. STRICT COMPLIANCE DIRECTIVE: Do NOT introduce margin-slashing price discounts; these customers maintain an elite average CLV ($10,175.58) and must not be trained to expect devalued price drops.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Standard volume development portfolio. This cohort tracks active Class 2 accounts maintaining stable baseline activity but lower overall revenue margins.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> INCREMENTAL FREQUENCY STIMULATION: Unlike premium tiers, this segment is highly responsive to price elasticity. Deploy targeted entry-level fare vouchers and integrated partner promotions to increase annual flight frequency, aiming to graduate these profiles toward higher value tiers over the next fiscal cycle.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+                
         elif 'Grade C' in selected_churn:
-            st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Stable account arrays carrying unpredictable or plateaued travel frequencies across consecutive monitoring cycles.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Mitigate risk by systematically enrolling high-value neutral accounts into an active engagement program tied to quarterly milestone rewards. Similar to your growing segments, safeguard your financial baselines by withholding baseline price cuts—incentivize retention purely through experiential milestones and non-discounted point tier bumps.</p>
-                </div>
-            """, unsafe_allow_html=True)
+            if is_high_value:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Stable account arrays carrying unpredictable or plateaued travel frequencies across consecutive monitoring cycles.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> Mitigate risk by systematically enrolling high-value neutral accounts into an active engagement program tied to quarterly milestone rewards. Similar to your growing segments, safeguard your financial baselines by withholding baseline price cuts—incentivize retention purely through experiential milestones and non-discounted point tier bumps.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Stable lower-margin account arrays carrying unpredictable or plateaued travel frequencies across consecutive monitoring cycles.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> PORTFOLIO NURTURE DRIVER: Use targeted entry-level promotional flight vouchers and cross-sell network partner deals to boost interaction velocity without adding high cost. Monitor quarterly margin changes against baseline thresholds to ensure campaigns remain profitable.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+                
         elif 'Grade E' in selected_churn:
-            st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Dormant registrations ("Ghost Members"). This cohort consists of 573 accounts who completed enrollment but logged zero lifetime flights, including 318 high-potential profiles where customer acquisition cost is already sunk.<br><br>
-                    <strong>Mandatory Playbook Action:</strong> Initialize an automated, targeted 90-day onboarding communication sequence built around an explicit, high-incentive first-flight bonus mile offer. Monitor these accounts closely for 90 days; if zero booking activity is recorded at the conclusion of this timeline, programmatically deprioritize the files to prevent wasteful outbound marketing expenditures.</p>
-                </div>
-            """, unsafe_allow_html=True)
+            if is_high_value:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Dormant registrations ("Ghost Members"). This cohort consists of 573 accounts who completed enrollment but logged zero lifetime flights, including 318 high-potential profiles where customer acquisition cost is already sunk.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> Initialize an automated, targeted 90-day onboarding communication sequence built around an explicit, high-incentive first-flight bonus mile offer. Monitor these accounts closely for 90 days; if zero booking activity is recorded at the conclusion of this timeline, programmatically deprioritize the files to prevent wasteful outbound marketing expenditures.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                        <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Standard dormant entries. This cohort isolates the remaining 255 low-value registration profiles who have never booked an active flight sequence since account creation.<br><br>
+                        <strong>Mandatory Playbook Action:</strong> DIGITAL RE-ENGAGEMENT LOOP: Initiate a basic, low-overhead 3-step automated email welcoming track using a baseline introductory mileage incentive. To protect cloud pipeline resources, programmatically archive or suppress these accounts from active tracking arrays if zero activity occurs within a compressed 60-day testing window.</p>
+                    </div>
+                """, unsafe_allow_html=True)
+                
         else:
+            # Fallback block handles both tiers identically for finalized churn statuses
             st.markdown("""
-                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> IConfirmed hard-churned portfolios. This segment contains 2,067 lost members representing a structural leakage of 12.3% of your total analyzed membership base.<br><br>
+                    <p class='editorial-narrative-p' style='margin: 0; font-size: 1.2rem !important;'><strong>Target Profile:</strong> Confirmed hard-churned portfolios. This segment contains 2,067 lost members representing a structural leakage of 12.3% of your total analyzed membership base.<br><br>
                     <strong>Mandatory Playbook Action:</strong> Enforce an immediate, absolute communication blackout across all promotional, active channels to protect marketing budgets. Programmatically route these profile identifiers to your offline exit survey banks to isolate historical churn triggers and compile loss metrics without wasting further outreach capital. Retain profile identifiers only for internal historical metrics analysis.</p>
                 </div>
             """, unsafe_allow_html=True)
@@ -489,7 +525,6 @@ try:
                 """, unsafe_allow_html=True)
         else:
             st.info("No active profiles match current configuration models to review.")
-
 # ==========================================
 # TAB 2: SIDE-BY-SIDE CROSS EXAMINATION MATRIX
 # ==========================================
