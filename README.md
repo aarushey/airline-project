@@ -4,8 +4,7 @@ An analytics engine and live tracking dashboard designed to transition transacti
 
 ### Core Assets & Gateways: 
 * **Live Web Application:** [Access Interactive Streamlit Cloud Interface] **https://airline-project.streamlit.app/** 
-* **Strategic Dossier:** [Download Complete Technical Report (PDF)]
-
+* **Strategic Dossier:** Download Detailed Report: [Airline_PS3](https://raw.githubusercontent.com/aarushey/airline-project/main/Airline_PS3.pdf)
 ---
 
 ## Competition Context: 
@@ -19,7 +18,7 @@ The analytical objectives are built around optimizing real-world loyalty metrics
 
 ---
 
-## Usage Features (What the Dashboard Does)
+## User Features:
 
 * **Interactive Strategy Controls Sidebar:** Allows operators to instantly slice the customer database by choosing a specific Valuation Archetype (Value Class) and a Risk Grade Profile simultaneously.
 * **Dynamic Color-Coded Status Alerts:** The system changes colors automatically depending on the selected risk profile—shifting to bright Red for high-urgency rescue alerts and turning to corporate Gray or Blue for lower-priority, stable segments.
@@ -33,7 +32,7 @@ The analytical objectives are built around optimizing real-world loyalty metrics
 
 ---
 
-Architecture & Data Features (How It Works Under the Hood)
+## Architecture & Data Features:
 
 * **Smart Data-Cleaning Layer:** Missing information inside the database (like blank passenger salary entries) is resolved by matching a profile's registered Province, City, and Education Level against regional medians instead of using arbitrary averages that skew report data.
 * **Isolating "Ghost Members":** Detects and segments 573 accounts that registered but never logged a single flight. Rather than treating them as broken lines or trash data, they are grouped into a standalone cohort ("Grade E") for low-cost digital marketing re-engagement.
